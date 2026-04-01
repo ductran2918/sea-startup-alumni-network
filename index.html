@@ -625,9 +625,8 @@ clearBtn.addEventListener('click', () => {
 });
 
 // ── Top picks chips ─────────────────────────────────────────────────────────
-const TOP_N = 5;
 const topList = document.getElementById('top-picks-list');
-DATASET.slice(0, TOP_N).forEach(entry => {
+DATASET.filter(entry => entry.unique_ai_companies >= 3).forEach(entry => {
   const chip = document.createElement('button');
   chip.className = 'pick-chip';
 
